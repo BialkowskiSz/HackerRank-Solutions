@@ -1,1 +1,1 @@
-### My repository of solutions to HackerRank questions.
+## My solutions to HackerRank questions.
