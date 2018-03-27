@@ -1,7 +1,7 @@
 #!/bin/python3
 
-# Copyright (c) 2018 Szymon Bialkowski
 # Authors: Szymon Bialkowski
+#      github.com/BialkowskiSz
 # Date: 23/03/2018
 
 """
