@@ -32,22 +32,22 @@ def queensAttack(n, k, rQ, cQ, obstacles):
         #   Top and bottom
         if cQ == obstacle[1]:
             if rQ < obstacle[0]:
-                blocksLeft = (obstacles[0]-(rQ-1))
+                blocksLeft = (obstacle[0]-(rQ-1))
                 if top > blocksLeft:
                     top = blocksLeft
             else:
-                blocksLeft = (rQ-obstacles[0]-1)
+                blocksLeft = (rQ-obstacle[0]-1)
                 if bottom > blocksLeft:
                     bottom = blocksLeft
 
         #   Left and right
         elif rQ == obstacle[0]:
             if cQ < obstacles[1]:
-                blocksLeft = (obstacles[1]-cQ-1)
+                blocksLeft = (obstacle[1]-cQ-1)
                 if right > blocksLeft:
                     right = blocksLeft
             else:
-                blocksLeft = (cQ-obstacles[1]-1)
+                blocksLeft = (cQ-obstacle[1]-1)
                 if left > blocksLeft:
                     left = blocksLeft
 
