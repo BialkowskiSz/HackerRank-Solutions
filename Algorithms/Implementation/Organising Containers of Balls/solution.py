@@ -21,9 +21,7 @@ def organizingContainers(container):
             lengths[pitBallCount] = 1
 
     for number in hashMap.values():
-        if number not in lengths:
-            return "Impossible"
-        elif lengths[number] == 0:
+        if lengths.get(number, 0) == 0:
             return "Impossible"
         lengths[number] -= 1
     return "Possible"
