@@ -7,10 +7,8 @@ def jumpingOnClouds(array):
 
     if length == 0 or length == 1:
         return length
-    elif length == 2:
+    elif length == 2 or length == 3:
         return 1
-    elif length == 3:
-        return 2
 
     counter = steps = 0
     while counter < length - 1:
@@ -26,7 +24,7 @@ def jumpingOnClouds(array):
 
 
 if __name__ == "__main__":
-    n = int(input().split())
-    c = map(int, input().strip().split(' '))
+    n = int(input())
+    c = [ int(i) for i in input().strip().split(' ') ]
     result = jumpingOnClouds(c)
     print(result)
