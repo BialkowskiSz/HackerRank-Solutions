@@ -25,14 +25,16 @@ def queensAttack(n, k, rQ, cQ, obstacles):
     bottomLeft  = bottom if bottom <= left  else left
     bottomRight = bottom if bottom <= right else right
 
+    
     for obstacle in obstacles:
 
-        queensDiagonal = obstacle[0] - rQ
+        rowDifference  = obstacle[0] - rQ
+        colDifference  = obstacle[1] - cQ
 
         #   Top and bottom
         if cQ == obstacle[1]:
             if rQ < obstacle[0]:
-                blocksLeft = (obstacle[0]-(rQ-1))
+                blocksLeft = obstacle[0] - rQ - 1
                 if top > blocksLeft:
                     top = blocksLeft
             else:
@@ -42,7 +44,7 @@ def queensAttack(n, k, rQ, cQ, obstacles):
 
         #   Left and right
         elif rQ == obstacle[0]:
-            if cQ < obstacles[1]:
+            if cQ < obstacle[1]:
                 blocksLeft = (obstacle[1]-cQ-1)
                 if right > blocksLeft:
                     right = blocksLeft
@@ -51,14 +53,14 @@ def queensAttack(n, k, rQ, cQ, obstacles):
                 if left > blocksLeft:
                     left = blocksLeft
 
-        #   TopRight and BottomRight diagonals
-        elif queensDiagonal == (obstacle[1] - cQ):
-            if queensDiagonal > 0:
-                blocksLeft = queensDiagonal-1
+        #   TopRight and BottomLeft diagonals
+        elif rowDifference == colDifference:
+            if rowDifference > 0:
+                blocksLeft = rowDifference-1
                 if topRight > blocksLeft:
                     topRight = blocksLeft
             else:
-                blocksLeft = abs(queensDiagonal)-1
+                blocksLeft = abs(rowDifference)-1
                 if bottomLeft > blocksLeft:
                     bottomLeft = blocksLeft
 
@@ -72,6 +74,8 @@ def queensAttack(n, k, rQ, cQ, obstacles):
                 blocksLeft = (rQ-obstacle[0]-1)
                 if bottomRight > blocksLeft:
                     bottomRight = blocksLeft
+
+    print(top, bottom, left, right, topLeft, topRight, bottomRight, bottomLeft)
 
     return top + bottom + left + right + \
            topLeft + topRight + bottomRight + bottomLeft
