@@ -1,6 +1,18 @@
+#!/bin/python3
 
-#!/bin/python
+# Authors: Szymon Bialkowski
+#      github.com/BialkowskiSz
+# Date: 22/04/2018
 
+"""
+Iterate through each combination of strings
+Iterate through number of topics
+Count and push to max heap
+while pop == pop count++
+
+
+Complexity: O(n^2m) time and O(x) space where x is number of possible teams
+"""
 import sys, heapq
 
 def acmTeam(topic):
