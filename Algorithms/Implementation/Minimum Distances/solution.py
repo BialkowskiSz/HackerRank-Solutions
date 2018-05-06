@@ -11,11 +11,13 @@ No protection against values which appear more than twice.
 
 Complexity: O(n) time and O(n) space where n is the size of the array
 """
+
 import sys
 
 def minimumDistances(array):
     hashMap = {}
-    minDistance = len(array)
+    arrayLength = len(array)
+    minDistance = arrayLength
     
     for index, value in enumerate(array):
         if value in hashMap:
@@ -25,7 +27,7 @@ def minimumDistances(array):
         else:
             hashMap[value] = index
             
-    if minDistance == len(array):
+    if minDistance == arrayLength:
         return -1
     return minDistance
                 
