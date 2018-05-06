@@ -1,5 +1,16 @@
 #!/bin/python3
 
+# Authors: Szymon Bialkowski
+#      github.com/BialkowskiSz
+# Date: 06/05/2018
+
+"""
+Store numbers in HashSet
+Iterate through elements and if element + d and element + d + d in hashSet then valid triplet
+
+Complexity: O(n) time and O(n) space
+"""
+
 import sys
 
 def beautifulTriplets(d, arr):
